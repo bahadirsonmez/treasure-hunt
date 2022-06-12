@@ -16,6 +16,10 @@
 		E57B699D28561AE60028635B /* Treasure_HuntUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B699C28561AE60028635B /* Treasure_HuntUITests.swift */; };
 		E57B699F28561AE60028635B /* Treasure_HuntUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B699E28561AE60028635B /* Treasure_HuntUITestsLaunchTests.swift */; };
 		E57B69AE285626E20028635B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B69AD285626E20028635B /* TabBarController.swift */; };
+		E57B69B628562BDF0028635B /* HuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B69B428562BDF0028635B /* HuntViewController.swift */; };
+		E57B69B728562BDF0028635B /* HuntViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57B69B528562BDF0028635B /* HuntViewController.xib */; };
+		E57B69BA28562BF70028635B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B69B828562BF70028635B /* ProfileViewController.swift */; };
+		E57B69BB28562BF70028635B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57B69B928562BF70028635B /* ProfileViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		E57B699C28561AE60028635B /* Treasure_HuntUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treasure_HuntUITests.swift; sourceTree = "<group>"; };
 		E57B699E28561AE60028635B /* Treasure_HuntUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treasure_HuntUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E57B69AD285626E20028635B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E57B69B428562BDF0028635B /* HuntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntViewController.swift; sourceTree = "<group>"; };
+		E57B69B528562BDF0028635B /* HuntViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HuntViewController.xib; sourceTree = "<group>"; };
+		E57B69B828562BF70028635B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E57B69B928562BF70028635B /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +146,37 @@
 		E57B69AC285626BB0028635B /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				E57B69AD285626E20028635B /* TabBarController.swift */,
+				E57B69B228562BAA0028635B /* TabBar */,
+				E57B69B128562B9F0028635B /* Hunt */,
+				E57B69B328562BB70028635B /* Profile */,
 			);
 			path = Flow;
+			sourceTree = "<group>";
+		};
+		E57B69B128562B9F0028635B /* Hunt */ = {
+			isa = PBXGroup;
+			children = (
+				E57B69B428562BDF0028635B /* HuntViewController.swift */,
+				E57B69B528562BDF0028635B /* HuntViewController.xib */,
+			);
+			path = Hunt;
+			sourceTree = "<group>";
+		};
+		E57B69B228562BAA0028635B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E57B69AD285626E20028635B /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		E57B69B328562BB70028635B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E57B69B828562BF70028635B /* ProfileViewController.swift */,
+				E57B69B928562BF70028635B /* ProfileViewController.xib */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +284,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E57B698828561AE60028635B /* LaunchScreen.storyboard in Resources */,
+				E57B69B728562BDF0028635B /* HuntViewController.xib in Resources */,
 				E57B698528561AE60028635B /* Assets.xcassets in Resources */,
+				E57B69BB28562BF70028635B /* ProfileViewController.xib in Resources */,
 				E57B698328561AE40028635B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +313,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E57B698028561AE40028635B /* ViewController.swift in Sources */,
+				E57B69B628562BDF0028635B /* HuntViewController.swift in Sources */,
+				E57B69BA28562BF70028635B /* ProfileViewController.swift in Sources */,
 				E57B69AE285626E20028635B /* TabBarController.swift in Sources */,
 				E57B697C28561AE40028635B /* AppDelegate.swift in Sources */,
 			);
