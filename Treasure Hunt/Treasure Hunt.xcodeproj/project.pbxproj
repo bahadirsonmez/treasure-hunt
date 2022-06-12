@@ -97,12 +97,9 @@
 		E57B697A28561AE40028635B /* Treasure Hunt */ = {
 			isa = PBXGroup;
 			children = (
-				E57B697B28561AE40028635B /* AppDelegate.swift */,
+				E57B69AB285626A60028635B /* Base */,
+				E57B69AC285626BB0028635B /* Flow */,
 				E57B697F28561AE40028635B /* ViewController.swift */,
-				E57B698128561AE40028635B /* Main.storyboard */,
-				E57B698428561AE60028635B /* Assets.xcassets */,
-				E57B698628561AE60028635B /* LaunchScreen.storyboard */,
-				E57B698928561AE60028635B /* Info.plist */,
 			);
 			path = "Treasure Hunt";
 			sourceTree = "<group>";
@@ -122,6 +119,25 @@
 				E57B699E28561AE60028635B /* Treasure_HuntUITestsLaunchTests.swift */,
 			);
 			path = "Treasure HuntUITests";
+			sourceTree = "<group>";
+		};
+		E57B69AB285626A60028635B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E57B697B28561AE40028635B /* AppDelegate.swift */,
+				E57B698128561AE40028635B /* Main.storyboard */,
+				E57B698428561AE60028635B /* Assets.xcassets */,
+				E57B698628561AE60028635B /* LaunchScreen.storyboard */,
+				E57B698928561AE60028635B /* Info.plist */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E57B69AC285626BB0028635B /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Flow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
