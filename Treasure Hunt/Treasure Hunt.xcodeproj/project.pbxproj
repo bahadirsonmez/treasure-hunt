@@ -19,6 +19,7 @@
 		E57B69B728562BDF0028635B /* HuntViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57B69B528562BDF0028635B /* HuntViewController.xib */; };
 		E57B69BA28562BF70028635B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B69B828562BF70028635B /* ProfileViewController.swift */; };
 		E57B69BB28562BF70028635B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57B69B928562BF70028635B /* ProfileViewController.xib */; };
+		E57B69BE28562CFA0028635B /* MKMapView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B69BD28562CFA0028635B /* MKMapView+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E57B69B528562BDF0028635B /* HuntViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HuntViewController.xib; sourceTree = "<group>"; };
 		E57B69B828562BF70028635B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E57B69B928562BF70028635B /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		E57B69BD28562CFA0028635B /* MKMapView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		E57B69AB285626A60028635B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E57B69BC28562CE80028635B /* Extensions */,
 				E57B697B28561AE40028635B /* AppDelegate.swift */,
 				E57B698128561AE40028635B /* Main.storyboard */,
 				E57B698428561AE60028635B /* Assets.xcassets */,
@@ -174,6 +177,14 @@
 				E57B69B928562BF70028635B /* ProfileViewController.xib */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		E57B69BC28562CE80028635B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E57B69BD28562CFA0028635B /* MKMapView+extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E57B69BE28562CFA0028635B /* MKMapView+extension.swift in Sources */,
 				E57B69B628562BDF0028635B /* HuntViewController.swift in Sources */,
 				E57B69BA28562BF70028635B /* ProfileViewController.swift in Sources */,
 				E57B69AE285626E20028635B /* TabBarController.swift in Sources */,
