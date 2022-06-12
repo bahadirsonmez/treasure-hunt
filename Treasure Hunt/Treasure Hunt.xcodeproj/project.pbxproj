@@ -15,6 +15,7 @@
 		E57B699328561AE60028635B /* Treasure_HuntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B699228561AE60028635B /* Treasure_HuntTests.swift */; };
 		E57B699D28561AE60028635B /* Treasure_HuntUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B699C28561AE60028635B /* Treasure_HuntUITests.swift */; };
 		E57B699F28561AE60028635B /* Treasure_HuntUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B699E28561AE60028635B /* Treasure_HuntUITestsLaunchTests.swift */; };
+		E57B69AE285626E20028635B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B69AD285626E20028635B /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E57B699828561AE60028635B /* Treasure HuntUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Treasure HuntUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57B699C28561AE60028635B /* Treasure_HuntUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treasure_HuntUITests.swift; sourceTree = "<group>"; };
 		E57B699E28561AE60028635B /* Treasure_HuntUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treasure_HuntUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E57B69AD285626E20028635B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		E57B69AC285626BB0028635B /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				E57B69AD285626E20028635B /* TabBarController.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E57B698028561AE40028635B /* ViewController.swift in Sources */,
+				E57B69AE285626E20028635B /* TabBarController.swift in Sources */,
 				E57B697C28561AE40028635B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
