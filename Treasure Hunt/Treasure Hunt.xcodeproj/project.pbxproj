@@ -22,6 +22,7 @@
 		E57B69BE28562CFA0028635B /* MKMapView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B69BD28562CFA0028635B /* MKMapView+extension.swift */; };
 		E58419A92857D38400A20043 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58419A82857D38400A20043 /* Colors.swift */; };
 		E58419AD2857D4EF00A20043 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58419AC2857D4EF00A20043 /* UIColor+extension.swift */; };
+		E58419B02857DBFB00A20043 /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = E58419AF2857DBFB00A20043 /* FloatingPanel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E58419B02857DBFB00A20043 /* FloatingPanel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +219,9 @@
 			dependencies = (
 			);
 			name = "Treasure Hunt";
+			packageProductDependencies = (
+				E58419AF2857DBFB00A20043 /* FloatingPanel */,
+			);
 			productName = "Treasure Hunt";
 			productReference = E57B697828561AE40028635B /* Treasure Hunt.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +294,9 @@
 				Base,
 			);
 			mainGroup = E57B696F28561AE40028635B;
+			packageReferences = (
+				E58419AE2857DBFB00A20043 /* XCRemoteSwiftPackageReference "FloatingPanel" */,
+			);
 			productRefGroup = E57B697928561AE40028635B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -684,6 +692,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E58419AE2857DBFB00A20043 /* XCRemoteSwiftPackageReference "FloatingPanel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scenee/FloatingPanel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E58419AF2857DBFB00A20043 /* FloatingPanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E58419AE2857DBFB00A20043 /* XCRemoteSwiftPackageReference "FloatingPanel" */;
+			productName = FloatingPanel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E57B697028561AE40028635B /* Project object */;
 }
