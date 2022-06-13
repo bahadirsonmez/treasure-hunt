@@ -10,11 +10,11 @@ import UIKit
 extension UIColor {
     
     class var greenButtonColor: UIColor {
-        return .systemGreen.withAlphaComponent(0.4)
+        return .systemGreen
     }
     
     class var redButtonColor: UIColor {
-        return .systemRed.withAlphaComponent(0.4)
+        return .systemRed
     }
 
 }
