@@ -15,11 +15,15 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func setupTabs() {
-        let firstView: UIViewController = UINavigationController(rootViewController: HuntViewController())
+        let firstController = HuntViewController()
+        firstController.title = "Hunt"
+        let firstView: UIViewController = UINavigationController(rootViewController: firstController)
         let tabbarItem = UITabBarItem(title: "Hunt", image: UIImage(systemName: "map.fill"), tag: 0)
         firstView.tabBarItem = tabbarItem
-                
-        let secondView: UIViewController = UINavigationController(rootViewController: ProfileViewController())
+        
+        let secondController = ProfileViewController()
+        secondController.title = "Profile"
+        let secondView: UIViewController = UINavigationController(rootViewController: secondController)
         let tabbarItem2 = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill"), tag: 1)
         secondView.tabBarItem = tabbarItem2
         
