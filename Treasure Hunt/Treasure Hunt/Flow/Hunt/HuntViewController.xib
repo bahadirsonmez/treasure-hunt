@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HuntViewController" customModule="Treasure_Hunt" customModuleProvider="target">
             <connections>
+                <outlet property="mapView" destination="YQk-09-azp" id="fpz-NE-NDC"/>
+                <outlet property="startButton" destination="MBy-dK-Id9" id="ca1-UB-GDs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,13 +23,28 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YQk-09-azp">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBy-dK-Id9">
+                    <rect key="frame" x="20" y="831" width="374" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="eFa-Pl-e8G"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Start Hunt"/>
+                    <connections>
+                        <action selector="startButtonTapped:" destination="-1" eventType="touchUpInside" id="fGd-vF-Gt2"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="MBy-dK-Id9" secondAttribute="bottom" constant="20" id="12f-Ee-fvz"/>
                 <constraint firstAttribute="bottom" secondItem="YQk-09-azp" secondAttribute="bottom" id="9XJ-yQ-FIT"/>
                 <constraint firstAttribute="trailing" secondItem="YQk-09-azp" secondAttribute="trailing" id="DoG-S2-kbE"/>
+                <constraint firstAttribute="trailing" secondItem="MBy-dK-Id9" secondAttribute="trailing" constant="20" id="Gpv-fk-jlc"/>
                 <constraint firstItem="YQk-09-azp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QUU-qB-Wl1"/>
                 <constraint firstItem="YQk-09-azp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oec-M3-cch"/>
+                <constraint firstItem="MBy-dK-Id9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="zT0-We-njH"/>
             </constraints>
             <point key="canvasLocation" x="139" y="151"/>
         </view>
