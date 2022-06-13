@@ -20,6 +20,7 @@
 		E57B69BA28562BF70028635B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B69B828562BF70028635B /* ProfileViewController.swift */; };
 		E57B69BB28562BF70028635B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57B69B928562BF70028635B /* ProfileViewController.xib */; };
 		E57B69BE28562CFA0028635B /* MKMapView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B69BD28562CFA0028635B /* MKMapView+extension.swift */; };
+		E58419A92857D38400A20043 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58419A82857D38400A20043 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		E57B69B828562BF70028635B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E57B69B928562BF70028635B /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		E57B69BD28562CFA0028635B /* MKMapView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+extension.swift"; sourceTree = "<group>"; };
+		E58419A82857D38400A20043 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,11 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				E57B69BC28562CE80028635B /* Extensions */,
-				E57B697B28561AE40028635B /* AppDelegate.swift */,
-				E57B698128561AE40028635B /* Main.storyboard */,
-				E57B698428561AE60028635B /* Assets.xcassets */,
-				E57B698628561AE60028635B /* LaunchScreen.storyboard */,
-				E57B698928561AE60028635B /* Info.plist */,
+				E58419AB2857D41D00A20043 /* Project Files */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -183,8 +181,21 @@
 			isa = PBXGroup;
 			children = (
 				E57B69BD28562CFA0028635B /* MKMapView+extension.swift */,
+				E58419A82857D38400A20043 /* Colors.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E58419AB2857D41D00A20043 /* Project Files */ = {
+			isa = PBXGroup;
+			children = (
+				E57B697B28561AE40028635B /* AppDelegate.swift */,
+				E57B698128561AE40028635B /* Main.storyboard */,
+				E57B698428561AE60028635B /* Assets.xcassets */,
+				E57B698628561AE60028635B /* LaunchScreen.storyboard */,
+				E57B698928561AE60028635B /* Info.plist */,
+			);
+			path = "Project Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E57B69BE28562CFA0028635B /* MKMapView+extension.swift in Sources */,
+				E58419A92857D38400A20043 /* Colors.swift in Sources */,
 				E57B69B628562BDF0028635B /* HuntViewController.swift in Sources */,
 				E57B69BA28562BF70028635B /* ProfileViewController.swift in Sources */,
 				E57B69AE285626E20028635B /* TabBarController.swift in Sources */,
