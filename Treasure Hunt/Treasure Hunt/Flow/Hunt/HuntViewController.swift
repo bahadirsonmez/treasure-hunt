@@ -10,8 +10,13 @@ import MapKit
 
 class HuntViewController: UIViewController {
 
-    @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet private weak var mapView: MKMapView!
+    @IBOutlet private weak var startButton: UIButton!
+    private var isStarted: Bool = false {
+        didSet {
+            configureButton()
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -24,17 +29,15 @@ class HuntViewController: UIViewController {
     }
     
     private func configureButton() {
-        startButton.backgroundColor =
-        backButton.backgroundColor = AppManager.color
-        backButton.icornerRadius = 5.0
-        backButton.setTitleColorForAllStates(AppManager.buttonTitleColor)
-        backButton.setTitle(viewModel.buttonTitle, for: .normal)
-        backButton.titleLabel?.font(Fonts.interBoldFont(size: 14.0))
+        startButton.backgroundColor = isStarted ? .redButtonColor : .greenButtonColor
+        startButton.layer.cornerRadius = 8.0
+        startButton.setTitle(isStarted ? "Pause Hunt" : "Start Hunt", for: .normal)
+        startButton.setTitleColor(.systemBackground, for: .normal)
+        startButton.titleLabel?.font = .preferredFont(forTextStyle: .title1)
     }
     
-    @IBAction func startButtonTapped(_ sender: UIButton) {
-        
+    @IBAction private func startButtonTapped(_ sender: UIButton) {
+        isStarted.toggle()
     }
-    
     
 }
