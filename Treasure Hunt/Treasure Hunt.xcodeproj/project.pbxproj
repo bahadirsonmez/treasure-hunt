@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E505071D28587AC2002F7125 /* CurrentHuntDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E505071B28587AC2002F7125 /* CurrentHuntDetailViewController.swift */; };
+		E505071E28587AC2002F7125 /* CurrentHuntDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E505071C28587AC2002F7125 /* CurrentHuntDetailViewController.xib */; };
+		E50507292858BAA3002F7125 /* FloatingPanelSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50507212858BAA3002F7125 /* FloatingPanelSurfaceView.swift */; };
+		E505072A2858BAA3002F7125 /* FloatingPanelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50507222858BAA3002F7125 /* FloatingPanelCore.swift */; };
+		E505072B2858BAA3002F7125 /* FloatingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50507232858BAA3002F7125 /* FloatingPanelController.swift */; };
+		E505072C2858BAA3002F7125 /* FloatingPanelBackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50507242858BAA3002F7125 /* FloatingPanelBackdropView.swift */; };
+		E505072D2858BAA3002F7125 /* FloatingPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50507252858BAA3002F7125 /* FloatingPanelView.swift */; };
+		E505072E2858BAA3002F7125 /* FloatingPanelBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50507262858BAA3002F7125 /* FloatingPanelBehavior.swift */; };
+		E505072F2858BAA3002F7125 /* FloatingPanelTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50507272858BAA3002F7125 /* FloatingPanelTransitioning.swift */; };
+		E50507302858BAA3002F7125 /* FloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50507282858BAA3002F7125 /* FloatingPanelLayout.swift */; };
 		E57B697C28561AE40028635B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B697B28561AE40028635B /* AppDelegate.swift */; };
 		E57B698328561AE40028635B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E57B698128561AE40028635B /* Main.storyboard */; };
 		E57B698528561AE60028635B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57B698428561AE60028635B /* Assets.xcassets */; };
@@ -22,7 +32,6 @@
 		E57B69BE28562CFA0028635B /* MKMapView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B69BD28562CFA0028635B /* MKMapView+extension.swift */; };
 		E58419A92857D38400A20043 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58419A82857D38400A20043 /* Colors.swift */; };
 		E58419AD2857D4EF00A20043 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58419AC2857D4EF00A20043 /* UIColor+extension.swift */; };
-		E58419B02857DBFB00A20043 /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = E58419AF2857DBFB00A20043 /* FloatingPanel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E505071B28587AC2002F7125 /* CurrentHuntDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentHuntDetailViewController.swift; path = Controller/CurrentHuntDetailViewController.swift; sourceTree = "<group>"; };
+		E505071C28587AC2002F7125 /* CurrentHuntDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CurrentHuntDetailViewController.xib; path = Controller/CurrentHuntDetailViewController.xib; sourceTree = "<group>"; };
+		E50507212858BAA3002F7125 /* FloatingPanelSurfaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatingPanelSurfaceView.swift; path = ../../../../../../FloatingPanelSurfaceView.swift; sourceTree = "<group>"; };
+		E50507222858BAA3002F7125 /* FloatingPanelCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatingPanelCore.swift; path = ../../../../../../FloatingPanelCore.swift; sourceTree = "<group>"; };
+		E50507232858BAA3002F7125 /* FloatingPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatingPanelController.swift; path = ../../../../../../FloatingPanelController.swift; sourceTree = "<group>"; };
+		E50507242858BAA3002F7125 /* FloatingPanelBackdropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatingPanelBackdropView.swift; path = ../../../../../../FloatingPanelBackdropView.swift; sourceTree = "<group>"; };
+		E50507252858BAA3002F7125 /* FloatingPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatingPanelView.swift; path = ../../../../../../FloatingPanelView.swift; sourceTree = "<group>"; };
+		E50507262858BAA3002F7125 /* FloatingPanelBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatingPanelBehavior.swift; path = ../../../../../../FloatingPanelBehavior.swift; sourceTree = "<group>"; };
+		E50507272858BAA3002F7125 /* FloatingPanelTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatingPanelTransitioning.swift; path = ../../../../../../FloatingPanelTransitioning.swift; sourceTree = "<group>"; };
+		E50507282858BAA3002F7125 /* FloatingPanelLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatingPanelLayout.swift; path = ../../../../../../FloatingPanelLayout.swift; sourceTree = "<group>"; };
 		E57B697828561AE40028635B /* Treasure Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Treasure Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57B697B28561AE40028635B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E57B698228561AE40028635B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E58419B02857DBFB00A20043 /* FloatingPanel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +108,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5050718285879D5002F7125 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E57B69B428562BDF0028635B /* HuntViewController.swift */,
+				E57B69B528562BDF0028635B /* HuntViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E505071928587A3E002F7125 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5050718285879D5002F7125 /* Controller */,
+				E505071B28587AC2002F7125 /* CurrentHuntDetailViewController.swift */,
+				E505071C28587AC2002F7125 /* CurrentHuntDetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E505071A28587A42002F7125 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E505071F2858BA4A002F7125 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				E50507202858BA52002F7125 /* Floating Panel */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		E50507202858BA52002F7125 /* Floating Panel */ = {
+			isa = PBXGroup;
+			children = (
+				E50507242858BAA3002F7125 /* FloatingPanelBackdropView.swift */,
+				E50507262858BAA3002F7125 /* FloatingPanelBehavior.swift */,
+				E50507232858BAA3002F7125 /* FloatingPanelController.swift */,
+				E50507222858BAA3002F7125 /* FloatingPanelCore.swift */,
+				E50507282858BAA3002F7125 /* FloatingPanelLayout.swift */,
+				E50507212858BAA3002F7125 /* FloatingPanelSurfaceView.swift */,
+				E50507272858BAA3002F7125 /* FloatingPanelTransitioning.swift */,
+				E50507252858BAA3002F7125 /* FloatingPanelView.swift */,
+			);
+			path = "Floating Panel";
+			sourceTree = "<group>";
+		};
 		E57B696F28561AE40028635B = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +206,7 @@
 		E57B69AB285626A60028635B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E505071F2858BA4A002F7125 /* Custom Views */,
 				E57B69BC28562CE80028635B /* Extensions */,
 				E58419AB2857D41D00A20043 /* Project Files */,
 			);
@@ -158,8 +226,8 @@
 		E57B69B128562B9F0028635B /* Hunt */ = {
 			isa = PBXGroup;
 			children = (
-				E57B69B428562BDF0028635B /* HuntViewController.swift */,
-				E57B69B528562BDF0028635B /* HuntViewController.xib */,
+				E505071A28587A42002F7125 /* ViewModel */,
+				E505071928587A3E002F7125 /* View */,
 			);
 			path = Hunt;
 			sourceTree = "<group>";
@@ -220,7 +288,6 @@
 			);
 			name = "Treasure Hunt";
 			packageProductDependencies = (
-				E58419AF2857DBFB00A20043 /* FloatingPanel */,
 			);
 			productName = "Treasure Hunt";
 			productReference = E57B697828561AE40028635B /* Treasure Hunt.app */;
@@ -295,7 +362,6 @@
 			);
 			mainGroup = E57B696F28561AE40028635B;
 			packageReferences = (
-				E58419AE2857DBFB00A20043 /* XCRemoteSwiftPackageReference "FloatingPanel" */,
 			);
 			productRefGroup = E57B697928561AE40028635B /* Products */;
 			projectDirPath = "";
@@ -317,6 +383,7 @@
 				E57B69B728562BDF0028635B /* HuntViewController.xib in Resources */,
 				E57B698528561AE60028635B /* Assets.xcassets in Resources */,
 				E57B69BB28562BF70028635B /* ProfileViewController.xib in Resources */,
+				E505071E28587AC2002F7125 /* CurrentHuntDetailViewController.xib in Resources */,
 				E57B698328561AE40028635B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,10 +412,19 @@
 				E57B69BE28562CFA0028635B /* MKMapView+extension.swift in Sources */,
 				E58419A92857D38400A20043 /* Colors.swift in Sources */,
 				E57B69B628562BDF0028635B /* HuntViewController.swift in Sources */,
+				E505072F2858BAA3002F7125 /* FloatingPanelTransitioning.swift in Sources */,
+				E50507292858BAA3002F7125 /* FloatingPanelSurfaceView.swift in Sources */,
 				E58419AD2857D4EF00A20043 /* UIColor+extension.swift in Sources */,
+				E50507302858BAA3002F7125 /* FloatingPanelLayout.swift in Sources */,
+				E505072A2858BAA3002F7125 /* FloatingPanelCore.swift in Sources */,
+				E505071D28587AC2002F7125 /* CurrentHuntDetailViewController.swift in Sources */,
+				E505072C2858BAA3002F7125 /* FloatingPanelBackdropView.swift in Sources */,
+				E505072E2858BAA3002F7125 /* FloatingPanelBehavior.swift in Sources */,
 				E57B69BA28562BF70028635B /* ProfileViewController.swift in Sources */,
 				E57B69AE285626E20028635B /* TabBarController.swift in Sources */,
+				E505072B2858BAA3002F7125 /* FloatingPanelController.swift in Sources */,
 				E57B697C28561AE40028635B /* AppDelegate.swift in Sources */,
+				E505072D2858BAA3002F7125 /* FloatingPanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,25 +768,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E58419AE2857DBFB00A20043 /* XCRemoteSwiftPackageReference "FloatingPanel" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scenee/FloatingPanel";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E58419AF2857DBFB00A20043 /* FloatingPanel */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E58419AE2857DBFB00A20043 /* XCRemoteSwiftPackageReference "FloatingPanel" */;
-			productName = FloatingPanel;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E57B697028561AE40028635B /* Project object */;
 }
