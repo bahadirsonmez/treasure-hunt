@@ -49,7 +49,14 @@ class HuntViewController: UIViewController {
         fpc.surfaceView.clipsToBounds = true
         fpc.contentMode = .static
         fpc.isRemovalInteractionEnabled = true
+        fpc.delegate = self
         self.present(fpc, animated: true, completion: nil)
     }
     
+}
+
+extension HuntViewController: FloatingPanelControllerDelegate {
+    func floatingPanelDidEndRemove(_ vc: FloatingPanelController) {
+        
+    }
 }
