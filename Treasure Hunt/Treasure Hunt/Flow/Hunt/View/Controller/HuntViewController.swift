@@ -47,7 +47,7 @@ class HuntViewController: UIViewController {
         fpc.surfaceView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         fpc.surfaceView.layer.cornerRadius = 20
         fpc.surfaceView.clipsToBounds = true
-        fpc.contentMode = .fitToBounds
+        fpc.contentMode = .static
         fpc.isRemovalInteractionEnabled = true
         self.present(fpc, animated: true, completion: nil)
     }
