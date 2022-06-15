@@ -38,11 +38,12 @@ final class CurrentHuntDetailLayout: FloatingPanelLayout {
     func insetFor(position: FloatingPanelPosition) -> CGFloat? {
         switch position {
         case .half: return 300
+        case .tip: return 60
         default: return nil
         }
     }
     
-    var supportedPositions: Set<FloatingPanelPosition> { [.half] }
+    var supportedPositions: Set<FloatingPanelPosition> { [.half, .tip] }
     
     func backdropAlphaFor(position: FloatingPanelPosition) -> CGFloat {
         0.1
