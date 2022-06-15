@@ -7,11 +7,14 @@
 
 import UIKit
 import MapKit
+import FloatingPanel
 
 class HuntViewController: UIViewController {
 
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var startButton: UIButton!
+    var fpc: FloatingPanelController!
+
     private var isStarted: Bool = false {
         didSet {
             configureButton()
@@ -38,6 +41,15 @@ class HuntViewController: UIViewController {
     
     @IBAction private func startButtonTapped(_ sender: UIButton) {
         isStarted.toggle()
+        let contentVC = CurrentHuntDetailViewController()
+        let fpc = FloatingPanelController(delegate: contentVC)
+        fpc.set(contentViewController: contentVC)
+        fpc.surfaceView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        fpc.surfaceView.layer.cornerRadius = 20
+        fpc.surfaceView.clipsToBounds = true
+        fpc.contentMode = .fitToBounds
+        fpc.isRemovalInteractionEnabled = true
+        self.present(fpc, animated: true, completion: nil)
     }
     
 }
