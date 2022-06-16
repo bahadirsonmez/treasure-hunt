@@ -25,6 +25,7 @@ class CurrentHuntDetailViewController: UIViewController {
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var walkLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
+    private var isPaused: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,9 @@ class CurrentHuntDetailViewController: UIViewController {
     }
     
     @IBAction func continueButtonTapped(_ sender: UIButton) {
+        isPaused.toggle()
+        let image = UIImage(systemName: isPaused ? "play.fill" : "pause.fill")
+        continueButton.setImage(image, for: .normal)
     }
 }
 
