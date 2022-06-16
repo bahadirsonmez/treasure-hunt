@@ -20,10 +20,29 @@ extension CurrentHuntDetailDelegate {
 
 class CurrentHuntDetailViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var walkLabel: UILabel!
+    @IBOutlet weak var continueButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
     }
     
+    private func setup() {
+       configureButton()
+    }
+    
+    private func configureButton() {
+        continueButton.contentHorizontalAlignment = .fill
+        continueButton.contentVerticalAlignment = .fill
+        continueButton.imageView?.contentMode = .scaleAspectFit
+    }
+    
+    @IBAction func continueButtonTapped(_ sender: UIButton) {
+    }
 }
 
 extension CurrentHuntDetailViewController: FloatingPanelControllerDelegate {
