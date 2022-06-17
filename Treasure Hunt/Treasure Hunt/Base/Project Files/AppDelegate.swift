@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        UserDefaults.standard.set(NSDate().timeIntervalSince1970, forKey: "currentTimestamp")
+    }
+    
 }
 
 extension AppDelegate {
