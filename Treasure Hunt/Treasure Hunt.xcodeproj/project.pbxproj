@@ -19,6 +19,7 @@
 		E505075428592B51002F7125 /* FloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E505074C28592B51002F7125 /* FloatingPanelLayout.swift */; };
 		E505075628592D16002F7125 /* GrabberHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E505075528592D16002F7125 /* GrabberHandleView.swift */; };
 		E505075828592DA7002F7125 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E505075728592DA7002F7125 /* UIExtensions.swift */; };
+		E55F838D285C880200700BB6 /* FormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55F838C285C880200700BB6 /* FormatHelper.swift */; };
 		E57B697C28561AE40028635B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B697B28561AE40028635B /* AppDelegate.swift */; };
 		E57B698328561AE40028635B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E57B698128561AE40028635B /* Main.storyboard */; };
 		E57B698528561AE60028635B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57B698428561AE60028635B /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		E505074C28592B51002F7125 /* FloatingPanelLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelLayout.swift; sourceTree = "<group>"; };
 		E505075528592D16002F7125 /* GrabberHandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrabberHandleView.swift; sourceTree = "<group>"; };
 		E505075728592DA7002F7125 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		E55F838C285C880200700BB6 /* FormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatHelper.swift; sourceTree = "<group>"; };
 		E57B697828561AE40028635B /* Treasure Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Treasure Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57B697B28561AE40028635B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E57B698228561AE40028635B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				E505071F2858BA4A002F7125 /* Custom Views */,
 				E57B69BC28562CE80028635B /* Extensions */,
 				E58419AB2857D41D00A20043 /* Project Files */,
+				E55F838C285C880200700BB6 /* FormatHelper.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				E505071D28587AC2002F7125 /* CurrentHuntDetailViewController.swift in Sources */,
 				E505075428592B51002F7125 /* FloatingPanelLayout.swift in Sources */,
 				E57B69BA28562BF70028635B /* ProfileViewController.swift in Sources */,
+				E55F838D285C880200700BB6 /* FormatHelper.swift in Sources */,
 				E505075028592B51002F7125 /* FloatingPanelBackdropView.swift in Sources */,
 				E57B69AE285626E20028635B /* TabBarController.swift in Sources */,
 				E505074D28592B51002F7125 /* FloatingPanelController.swift in Sources */,

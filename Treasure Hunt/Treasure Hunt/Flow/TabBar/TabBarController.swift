@@ -17,7 +17,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     func setupTabs() {
         let firstController = HuntViewController()
         firstController.title = "Hunt"
-        let firstView: UIViewController = UINavigationController(rootViewController: firstController)
+//        let firstView: UIViewController = UINavigationController(rootViewController: firstController)
+        let firstView: UIViewController = firstController
         let tabbarItem = UITabBarItem(title: "Hunt", image: UIImage(systemName: "map.fill"), tag: 0)
         firstView.tabBarItem = tabbarItem
         
