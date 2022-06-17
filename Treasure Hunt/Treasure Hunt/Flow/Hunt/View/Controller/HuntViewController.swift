@@ -48,7 +48,7 @@ class HuntViewController: UIViewController {
         fpc.surfaceView.layer.cornerRadius = 20
         fpc.surfaceView.clipsToBounds = true
         fpc.contentMode = .static
-        fpc.isRemovalInteractionEnabled = true
+        fpc.backdropView.dismissalTapGestureRecognizer.numberOfTapsRequired = 3
         self.present(fpc, animated: true, completion: nil)
     }
     

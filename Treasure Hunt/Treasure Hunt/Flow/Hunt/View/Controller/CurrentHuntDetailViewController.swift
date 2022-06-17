@@ -65,7 +65,7 @@ final class CurrentHuntDetailLayout: FloatingPanelLayout {
     func insetFor(position: FloatingPanelPosition) -> CGFloat? {
         switch position {
         case .half: return 300
-        case .tip: return 120
+        case .tip: return 100
         default: return nil
         }
     }
