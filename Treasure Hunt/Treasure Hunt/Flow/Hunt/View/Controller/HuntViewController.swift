@@ -15,11 +15,12 @@ class HuntViewController: UIViewController {
     @IBOutlet private weak var startButton: UIButton!
     var fpc: FloatingPanelController!
 
-    private var isStarted: Bool = false {
-        didSet {
-            configureButton()
-        }
-    }
+    private var isStarted: Bool = false
+//    {
+//        didSet {
+//            configureButton()
+//        }
+//    }
     
     
     override func viewDidLoad() {
@@ -40,7 +41,7 @@ class HuntViewController: UIViewController {
     }
     
     @IBAction private func startButtonTapped(_ sender: UIButton) {
-        isStarted.toggle()
+//        isStarted.toggle()
         let contentVC = CurrentHuntDetailViewController()
         let fpc = FloatingPanelController(delegate: contentVC)
         fpc.set(contentViewController: contentVC)
