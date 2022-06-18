@@ -7,14 +7,18 @@
 
 import UIKit
 import MapKit
-import FloatingPanel
 
 class HuntViewController: UIViewController {
-
+    
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var startButton: UIButton!
     var fpc: FloatingPanelController!
-
+    var currentLocation: CLLocation? {
+        didSet {
+            centerToTheLocation(currentLocation)
+        }
+    }
+    
     private var isStarted: Bool = false
 //    {
 //        didSet {
@@ -28,8 +32,49 @@ class HuntViewController: UIViewController {
         setup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        LocationManager.shared.askForLocationServices()
+        generateAnnoLoc()
+    }
+    
+    private func bindLocationManager() {
+        LocationManager.shared.locationUpdateHandler = { [weak self] in
+            self?.currentLocation = LocationManager.shared.location()
+        }
+    }
+    
     private func setup() {
         configureButton()
+        configureLocationNotifications()
+        configureMapView()
+        bindLocationManager()
+    }
+    
+    private func configureMapView() {
+        mapView.showsUserLocation = true
+        mapView.showsCompass = true
+        mapView.showsBuildings = true
+    }
+    
+    private func configureLocationNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(locationDidAuthorized(_:)), name: .locationAuthorizationDidAllowed, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(locationDidDenied(_:)), name: .locationAuthorizationDidDenied, object: nil)
+    }
+    
+    @objc
+    private func locationDidAuthorized(_ notification: NSNotification) {
+        currentLocation = LocationManager.shared.location()
+    }
+    
+    @objc
+    private func locationDidDenied(_ notification: NSNotification) {
+        print(notification.name)
+    }
+    
+    private func centerToTheLocation(_ location: CLLocation?) {
+        guard let location = location else { return }
+        mapView.centerToLocation(location)
     }
     
     private func configureButton() {

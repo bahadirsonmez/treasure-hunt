@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FloatingPanel
 
 protocol CurrentHuntDetailDelegate: AnyObject {
     func huntCompleted()
