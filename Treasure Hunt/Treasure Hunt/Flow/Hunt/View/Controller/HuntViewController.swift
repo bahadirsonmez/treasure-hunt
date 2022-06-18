@@ -35,7 +35,7 @@ class HuntViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         LocationManager.shared.askForLocationServices()
-        generateAnnoLoc()
+        generateRandomPointAnnotation()
     }
     
     private func bindLocationManager() {
@@ -97,18 +97,20 @@ class HuntViewController: UIViewController {
         fpc.backdropView.dismissalTapGestureRecognizer.numberOfTapsRequired = 3
         self.present(fpc, animated: true, completion: nil)
     }
-    
-    func generateAnnoLoc() {
+}
+
+// MARK: - Random location
+
+extension HuntViewController {
+    private func generateRandomPointAnnotation() {
         let annotation = MKPointAnnotation()
-        annotation.coordinate = generateRandomCoordinates(min: 50, max: 300) //this will be the maximum and minimum distance of the annotation from the current Location (Meters)
+        annotation.coordinate = generateRandomCoordinates(min: 50, max: 300)
         annotation.title = "Annotation Title"
         annotation.subtitle = "SubTitle"
         mapView.addAnnotation(annotation)
-        
-        
     }
     
-    func generateRandomCoordinates(min: UInt32, max: UInt32)-> CLLocationCoordinate2D {
+    private func generateRandomCoordinates(min: UInt32, max: UInt32)-> CLLocationCoordinate2D {
         //Get the Current Location's longitude and latitude
         let currentLong = currentLocation?.coordinate.longitude ?? 0
         let currentLat = currentLocation?.coordinate.latitude ?? 0
@@ -139,8 +141,5 @@ class HuntViewController: UIViewController {
         }else {
             return CLLocationCoordinate2D(latitude: currentLat - metersCordN, longitude: currentLong)
         }
-        
     }
-    
-    
 }
