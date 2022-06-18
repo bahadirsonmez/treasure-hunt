@@ -20,6 +20,7 @@
 		E505075628592D16002F7125 /* GrabberHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E505075528592D16002F7125 /* GrabberHandleView.swift */; };
 		E505075828592DA7002F7125 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E505075728592DA7002F7125 /* UIExtensions.swift */; };
 		E55F838D285C880200700BB6 /* FormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55F838C285C880200700BB6 /* FormatHelper.swift */; };
+		E55F8390285CCAE200700BB6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55F838F285CCAE200700BB6 /* LocationManager.swift */; };
 		E57B697C28561AE40028635B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B697B28561AE40028635B /* AppDelegate.swift */; };
 		E57B698328561AE40028635B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E57B698128561AE40028635B /* Main.storyboard */; };
 		E57B698528561AE60028635B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57B698428561AE60028635B /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		E505075528592D16002F7125 /* GrabberHandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrabberHandleView.swift; sourceTree = "<group>"; };
 		E505075728592DA7002F7125 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		E55F838C285C880200700BB6 /* FormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatHelper.swift; sourceTree = "<group>"; };
+		E55F838F285CCAE200700BB6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E57B697828561AE40028635B /* Treasure Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Treasure Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57B697B28561AE40028635B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E57B698228561AE40028635B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,6 +167,15 @@
 			path = "Floating Panel";
 			sourceTree = "<group>";
 		};
+		E55F838E285CCAD200700BB6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E55F838C285C880200700BB6 /* FormatHelper.swift */,
+				E55F838F285CCAE200700BB6 /* LocationManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		E57B696F28561AE40028635B = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +228,7 @@
 				E505071F2858BA4A002F7125 /* Custom Views */,
 				E57B69BC28562CE80028635B /* Extensions */,
 				E58419AB2857D41D00A20043 /* Project Files */,
-				E55F838C285C880200700BB6 /* FormatHelper.swift */,
+				E55F838E285CCAD200700BB6 /* Helpers */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -430,6 +441,7 @@
 				E55F838D285C880200700BB6 /* FormatHelper.swift in Sources */,
 				E505075028592B51002F7125 /* FloatingPanelBackdropView.swift in Sources */,
 				E57B69AE285626E20028635B /* TabBarController.swift in Sources */,
+				E55F8390285CCAE200700BB6 /* LocationManager.swift in Sources */,
 				E505074D28592B51002F7125 /* FloatingPanelController.swift in Sources */,
 				E505075628592D16002F7125 /* GrabberHandleView.swift in Sources */,
 				E505074E28592B51002F7125 /* FloatingPanelBehavior.swift in Sources */,
@@ -618,11 +630,12 @@
 				DEVELOPMENT_TEAM = A28SA6ZP59;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Treasure Hunt/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Harita üzerinde mevcut konumuzunu görmek için konum izni vermeniz gerekmektedir.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -646,11 +659,12 @@
 				DEVELOPMENT_TEAM = A28SA6ZP59;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Treasure Hunt/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Harita üzerinde mevcut konumuzunu görmek için konum izni vermeniz gerekmektedir.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
