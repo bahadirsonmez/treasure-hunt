@@ -20,11 +20,7 @@ class HuntViewController: UIViewController {
     }
     
     private var isStarted: Bool = false
-    //    {
-    //        didSet {
-    //            configureButton()
-    //        }
-    //    }
+    private var annotation: MKPointAnnotation?
     
     
     override func viewDidLoad() {
@@ -35,7 +31,9 @@ class HuntViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         LocationManager.shared.askForLocationServices()
-        generateRandomPointAnnotation()
+        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+            self.generateRandomPointAnnotation()
+        }
     }
     
     private func bindLocationManager() {
@@ -55,6 +53,7 @@ class HuntViewController: UIViewController {
         mapView.showsUserLocation = true
         mapView.showsCompass = true
         mapView.showsBuildings = true
+        mapView.delegate = self
     }
     
     private func configureLocationNotifications() {
@@ -107,7 +106,10 @@ extension HuntViewController {
         annotation.coordinate = generateRandomCoordinates(min: 50, max: 300)
         annotation.title = "Annotation Title"
         annotation.subtitle = "SubTitle"
+        self.annotation = annotation
         mapView.addAnnotation(annotation)
+        self.getDirections()
+//        self.calculateRoute()
     }
     
     private func generateRandomCoordinates(min: UInt32, max: UInt32)-> CLLocationCoordinate2D {
@@ -143,3 +145,61 @@ extension HuntViewController {
         }
     }
 }
+
+// MARK: - Helpers
+
+extension HuntViewController {
+    func getDirections(){
+        let request = MKDirections.Request()
+        request.transportType = .walking
+        request.source = MKMapItem.forCurrentLocation()
+        
+        
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: annotation!.coordinate))
+        request.requestsAlternateRoutes = false
+        
+        let directions = MKDirections(request: request)
+        
+        
+        directions.calculate { (response, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                let overlays = self.mapView.overlays
+                self.mapView.removeOverlays(overlays)
+                
+                for route in response!.routes {
+                    
+                    self.mapView.addOverlay(route.polyline,
+                                            level: MKOverlayLevel.aboveRoads)
+                    
+                    var instructionNumber = 0
+                    for next in route.steps {
+                        instructionNumber += 1
+                        print(next.instructions)
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MARK: - MKMapViewDelegate
+
+extension HuntViewController: MKMapViewDelegate {
+    func mapViewDidFailLoadingMap(_ mapView: MKMapView, withError error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay ) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        
+        renderer.strokeColor = .systemBlue
+        renderer.lineWidth = 3
+        
+        return renderer
+    }
+}
+
+
