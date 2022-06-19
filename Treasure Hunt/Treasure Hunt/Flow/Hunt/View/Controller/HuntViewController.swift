@@ -85,7 +85,6 @@ class HuntViewController: UIViewController {
     }
     
     @IBAction private func startButtonTapped(_ sender: UIButton) {
-        //        isStarted.toggle()
         let contentVC = CurrentHuntDetailViewController()
         let fpc = FloatingPanelController(delegate: contentVC)
         fpc.set(contentViewController: contentVC)
@@ -106,14 +105,12 @@ extension HuntViewController {
         annotation.coordinate = generateRandomCoordinates(min: 50, max: 300)
         annotation.title = "Annotation Title"
         annotation.subtitle = "SubTitle"
-        self.annotation = annotation
         mapView.addAnnotation(annotation)
+        self.annotation = annotation
         self.getDirections()
-//        self.calculateRoute()
     }
     
     private func generateRandomCoordinates(min: UInt32, max: UInt32)-> CLLocationCoordinate2D {
-        //Get the Current Location's longitude and latitude
         let currentLong = currentLocation?.coordinate.longitude ?? 0
         let currentLat = currentLocation?.coordinate.latitude ?? 0
         
@@ -153,32 +150,18 @@ extension HuntViewController {
         let request = MKDirections.Request()
         request.transportType = .walking
         request.source = MKMapItem.forCurrentLocation()
-        
-        
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: annotation!.coordinate))
         request.requestsAlternateRoutes = false
         
         let directions = MKDirections(request: request)
-        
-        
         directions.calculate { (response, error) in
-            
             if let error = error {
                 print(error.localizedDescription)
             } else {
                 let overlays = self.mapView.overlays
                 self.mapView.removeOverlays(overlays)
-                
                 for route in response!.routes {
-                    
-                    self.mapView.addOverlay(route.polyline,
-                                            level: MKOverlayLevel.aboveRoads)
-                    
-                    var instructionNumber = 0
-                    for next in route.steps {
-                        instructionNumber += 1
-                        print(next.instructions)
-                    }
+                    self.mapView.addOverlay(route.polyline, level: MKOverlayLevel.aboveRoads)
                 }
             }
         }
@@ -194,10 +177,8 @@ extension HuntViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay ) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
-        
-        renderer.strokeColor = .systemBlue
-        renderer.lineWidth = 3
-        
+        renderer.strokeColor = .systemGreen
+        renderer.lineWidth = 5
         return renderer
     }
 }
