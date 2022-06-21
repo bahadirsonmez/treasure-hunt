@@ -12,16 +12,9 @@ class HuntViewController: UIViewController {
     
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var startButton: UIButton!
-    var fpc: FloatingPanelController!
-    var currentLocation: CLLocation? {
-        didSet {
-            centerToTheLocation(currentLocation)
-        }
-    }
+    private var fpc: FloatingPanelController!
     
-    private var isStarted: Bool = false
     private var annotation: MKPointAnnotation?
-    
     private let viewModel: HuntViewModel
     
     // MARK: - Initializers
@@ -47,24 +40,24 @@ class HuntViewController: UIViewController {
             self.generateRandomPointAnnotation()
         }
     }
-    
-    private func bindLocationManager() {
-        LocationManager.shared.locationUpdateHandler = { [weak self] in
-            self?.currentLocation = LocationManager.shared.location()
-        }
-    }
-    
+        
     private func setup() {
         configureButton()
         configureLocationNotifications()
         configureMapView()
-        bindLocationManager()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        viewModel.locationChanged = { [weak self] location in
+            self?.centerToTheLocation(location)
+        }
     }
     
     private func configureMapView() {
         mapView.showsUserLocation = true
-        mapView.showsCompass = true
-        mapView.showsBuildings = true
+        mapView.showsCompass = false
+        mapView.showsBuildings = false
         mapView.delegate = self
     }
     
@@ -75,7 +68,7 @@ class HuntViewController: UIViewController {
     
     @objc
     private func locationDidAuthorized(_ notification: NSNotification) {
-        currentLocation = LocationManager.shared.location()
+        viewModel.currentLocation = LocationManager.shared.location()
     }
     
     @objc
@@ -89,9 +82,9 @@ class HuntViewController: UIViewController {
     }
     
     private func configureButton() {
-        startButton.backgroundColor = isStarted ? .redButtonColor : .greenButtonColor
+        startButton.backgroundColor = .greenButtonColor
         startButton.layer.cornerRadius = 8.0
-        startButton.setTitle(isStarted ? "Pause Hunt" : "Start Hunt", for: .normal)
+        startButton.setTitle("Start Hunt", for: .normal)
         startButton.setTitleColor(.systemBackground, for: .normal)
         startButton.titleLabel?.font = .preferredFont(forTextStyle: .title1)
     }
@@ -121,12 +114,12 @@ extension HuntViewController {
         annotation.subtitle = "SubTitle"
         mapView.addAnnotation(annotation)
         self.annotation = annotation
-        self.getDirections()
+//        self.getDirections()
     }
     
     private func generateRandomCoordinates(min: UInt32, max: UInt32)-> CLLocationCoordinate2D {
-        let currentLong = currentLocation?.coordinate.longitude ?? 0
-        let currentLat = currentLocation?.coordinate.latitude ?? 0
+        let currentLong = viewModel.currentLocation?.coordinate.longitude ?? 0
+        let currentLat = viewModel.currentLocation?.coordinate.latitude ?? 0
         
         //1 KiloMeter = 0.00900900900901° So, 1 Meter = 0.00900900900901 / 1000
         let meterCord = 0.00900900900901 / 1000
