@@ -36,6 +36,7 @@
 		E57B69BE28562CFA0028635B /* MKMapView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B69BD28562CFA0028635B /* MKMapView+extension.swift */; };
 		E58419A92857D38400A20043 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58419A82857D38400A20043 /* Colors.swift */; };
 		E58419AD2857D4EF00A20043 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58419AC2857D4EF00A20043 /* UIColor+extension.swift */; };
+		E5C26E8F2861F5DE00907538 /* HuntViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C26E8E2861F5DE00907538 /* HuntViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		E57B69BD28562CFA0028635B /* MKMapView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+extension.swift"; sourceTree = "<group>"; };
 		E58419A82857D38400A20043 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E58419AC2857D4EF00A20043 /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		E5C26E8E2861F5DE00907538 /* HuntViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		E505071A28587A42002F7125 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E5C26E8E2861F5DE00907538 /* HuntViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5C26E8F2861F5DE00907538 /* HuntViewModel.swift in Sources */,
 				E57B69BE28562CFA0028635B /* MKMapView+extension.swift in Sources */,
 				E58419A92857D38400A20043 /* Colors.swift in Sources */,
 				E57B69B628562BDF0028635B /* HuntViewController.swift in Sources */,

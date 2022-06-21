@@ -15,7 +15,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func setupTabs() {
-        let firstController = HuntViewController()
+        let firstViewModel = HuntViewModel()
+        let firstController = HuntViewController(viewModel: firstViewModel)
         firstController.title = "Hunt"
 //        let firstView: UIViewController = UINavigationController(rootViewController: firstController)
         let firstView: UIViewController = firstController

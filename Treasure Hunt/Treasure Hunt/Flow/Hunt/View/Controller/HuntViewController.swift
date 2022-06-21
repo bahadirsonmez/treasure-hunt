@@ -22,7 +22,19 @@ class HuntViewController: UIViewController {
     private var isStarted: Bool = false
     private var annotation: MKPointAnnotation?
     
+    private let viewModel: HuntViewModel
     
+    // MARK: - Initializers
+    
+    init(viewModel: HuntViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
