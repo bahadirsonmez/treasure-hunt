@@ -37,6 +37,8 @@
 		E58419A92857D38400A20043 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58419A82857D38400A20043 /* Colors.swift */; };
 		E58419AD2857D4EF00A20043 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58419AC2857D4EF00A20043 /* UIColor+extension.swift */; };
 		E5C26E8F2861F5DE00907538 /* HuntViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C26E8E2861F5DE00907538 /* HuntViewModel.swift */; };
+		E5C26E932861F9A900907538 /* LocationPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C26E912861F9A900907538 /* LocationPermissionViewController.swift */; };
+		E5C26E942861F9A900907538 /* LocationPermissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C26E922861F9A900907538 /* LocationPermissionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		E58419A82857D38400A20043 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E58419AC2857D4EF00A20043 /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		E5C26E8E2861F5DE00907538 /* HuntViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntViewModel.swift; sourceTree = "<group>"; };
+		E5C26E912861F9A900907538 /* LocationPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionViewController.swift; sourceTree = "<group>"; };
+		E5C26E922861F9A900907538 /* LocationPermissionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationPermissionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				E57B69B228562BAA0028635B /* TabBar */,
+				E5C26E902861F98A00907538 /* LocationPermission */,
 				E57B69B128562B9F0028635B /* Hunt */,
 				E57B69B328562BB70028635B /* Profile */,
 			);
@@ -292,6 +297,15 @@
 				E57B698928561AE60028635B /* Info.plist */,
 			);
 			path = "Project Files";
+			sourceTree = "<group>";
+		};
+		E5C26E902861F98A00907538 /* LocationPermission */ = {
+			isa = PBXGroup;
+			children = (
+				E5C26E912861F9A900907538 /* LocationPermissionViewController.swift */,
+				E5C26E922861F9A900907538 /* LocationPermissionViewController.xib */,
+			);
+			path = LocationPermission;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +418,7 @@
 			files = (
 				E57B698828561AE60028635B /* LaunchScreen.storyboard in Resources */,
 				E57B69B728562BDF0028635B /* HuntViewController.xib in Resources */,
+				E5C26E942861F9A900907538 /* LocationPermissionViewController.xib in Resources */,
 				E57B698528561AE60028635B /* Assets.xcassets in Resources */,
 				E57B69BB28562BF70028635B /* ProfileViewController.xib in Resources */,
 				E505071E28587AC2002F7125 /* CurrentHuntDetailViewController.xib in Resources */,
@@ -450,6 +465,7 @@
 				E505075628592D16002F7125 /* GrabberHandleView.swift in Sources */,
 				E505074E28592B51002F7125 /* FloatingPanelBehavior.swift in Sources */,
 				E57B697C28561AE40028635B /* AppDelegate.swift in Sources */,
+				E5C26E932861F9A900907538 /* LocationPermissionViewController.swift in Sources */,
 				E505075328592B51002F7125 /* FloatingPanelSurfaceView.swift in Sources */,
 				E505075228592B51002F7125 /* FloatingPanelTransitioning.swift in Sources */,
 				E505075128592B51002F7125 /* FloatingPanelView.swift in Sources */,
