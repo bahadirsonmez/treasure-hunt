@@ -181,6 +181,15 @@ extension HuntViewController: MKMapViewDelegate {
         renderer.lineWidth = 5
         return renderer
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "annoId")
+        if annotation.title == "Annotation Title" {
+            annotationView.image = UIImage(systemName: "xmark")
+            return annotationView
+        }
+        return nil
+    }
 }
 
 
