@@ -86,14 +86,16 @@ class HuntViewController: UIViewController {
     
     @IBAction private func startButtonTapped(_ sender: UIButton) {
         let contentVC = CurrentHuntDetailViewController()
-        let fpc = FloatingPanelController(delegate: contentVC)
+        fpc = FloatingPanelController()
+        fpc.delegate = self
         fpc.set(contentViewController: contentVC)
         fpc.surfaceView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         fpc.surfaceView.layer.cornerRadius = 20
         fpc.surfaceView.clipsToBounds = true
         fpc.contentMode = .static
-        fpc.backdropView.dismissalTapGestureRecognizer.numberOfTapsRequired = 3
-        self.present(fpc, animated: true, completion: nil)
+        fpc.addPanel(toParent: self)
+        fpc.hide()
+        fpc.show(animated: true, completion: nil)
     }
 }
 
@@ -192,4 +194,12 @@ extension HuntViewController: MKMapViewDelegate {
     }
 }
 
-
+extension HuntViewController: FloatingPanelControllerDelegate {
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+        CurrentHuntDetailLayout()
+    }
+    
+    func floatingPanelDidEndRemove(_ vc: FloatingPanelController) {
+        // Removal
+    }
+}

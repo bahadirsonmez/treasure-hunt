@@ -56,8 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E505071B28587AC2002F7125 /* CurrentHuntDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentHuntDetailViewController.swift; path = Controller/CurrentHuntDetailViewController.swift; sourceTree = "<group>"; };
-		E505071C28587AC2002F7125 /* CurrentHuntDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CurrentHuntDetailViewController.xib; path = Controller/CurrentHuntDetailViewController.xib; sourceTree = "<group>"; };
+		E505071B28587AC2002F7125 /* CurrentHuntDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentHuntDetailViewController.swift; sourceTree = "<group>"; };
+		E505071C28587AC2002F7125 /* CurrentHuntDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentHuntDetailViewController.xib; sourceTree = "<group>"; };
 		E505074528592B51002F7125 /* FloatingPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelController.swift; sourceTree = "<group>"; };
 		E505074628592B51002F7125 /* FloatingPanelBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelBehavior.swift; sourceTree = "<group>"; };
 		E505074728592B51002F7125 /* FloatingPanelCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelCore.swift; sourceTree = "<group>"; };
@@ -119,6 +119,8 @@
 		E5050718285879D5002F7125 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E505071B28587AC2002F7125 /* CurrentHuntDetailViewController.swift */,
+				E505071C28587AC2002F7125 /* CurrentHuntDetailViewController.xib */,
 				E57B69B428562BDF0028635B /* HuntViewController.swift */,
 				E57B69B528562BDF0028635B /* HuntViewController.xib */,
 			);
@@ -129,8 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				E5050718285879D5002F7125 /* Controller */,
-				E505071B28587AC2002F7125 /* CurrentHuntDetailViewController.swift */,
-				E505071C28587AC2002F7125 /* CurrentHuntDetailViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

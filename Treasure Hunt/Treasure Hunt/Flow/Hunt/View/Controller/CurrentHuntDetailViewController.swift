@@ -105,17 +105,7 @@ extension CurrentHuntDetailViewController {
 
 }
 
-// MARK: - FloatingPanelControllerDelegate
-
-extension CurrentHuntDetailViewController: FloatingPanelControllerDelegate {
-    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
-        CurrentHuntDetailLayout()
-    }
-    
-    func floatingPanelDidEndRemove(_ vc: FloatingPanelController) {
-        // Removal
-    }
-}
+// MARK: - FloatingPanelLayout
 
 final class CurrentHuntDetailLayout: FloatingPanelLayout {
     var initialPosition: FloatingPanelPosition { .half }
@@ -123,7 +113,7 @@ final class CurrentHuntDetailLayout: FloatingPanelLayout {
     func insetFor(position: FloatingPanelPosition) -> CGFloat? {
         switch position {
         case .half: return 300
-        case .tip: return 100
+        case .tip: return 120
         default: return nil
         }
     }
