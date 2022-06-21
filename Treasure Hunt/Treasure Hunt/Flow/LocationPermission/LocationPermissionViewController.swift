@@ -8,8 +8,14 @@
 import UIKit
 
 class LocationPermissionViewController: UIViewController {
-
+    @IBOutlet private weak var permissionLabel: UILabel!
+    @IBOutlet private weak var permissionButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func permissionButtonTapped(_ sender: UIButton) {
+        
     }
 }
