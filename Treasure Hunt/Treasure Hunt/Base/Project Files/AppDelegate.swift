@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         configureAppearance()
-        self.window?.rootViewController = TabBarController()
+        let navigationController =
+        UINavigationController(rootViewController:
+                                LocationManager.shared.isAuthorized()
+                               ? TabBarController()
+                               : LocationPermissionViewController())
+        navigationController.isNavigationBarHidden = true
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         return true
     }
