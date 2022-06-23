@@ -15,4 +15,25 @@ extension MKMapView {
             longitudinalMeters: regionRadius)
         setRegion(coordinateRegion, animated: true)
     }
+    
+    func getDirections(to annotation: MKPointAnnotation){
+        let request = MKDirections.Request()
+        request.transportType = .walking
+        request.source = MKMapItem.forCurrentLocation()
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: annotation.coordinate))
+        request.requestsAlternateRoutes = false
+        
+        let directions = MKDirections(request: request)
+        directions.calculate { (response, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                let overlays = self.overlays
+                self.removeOverlays(overlays)
+                for route in response!.routes {
+                    self.addOverlay(route.polyline, level: MKOverlayLevel.aboveRoads)
+                }
+            }
+        }
+    }
 }
