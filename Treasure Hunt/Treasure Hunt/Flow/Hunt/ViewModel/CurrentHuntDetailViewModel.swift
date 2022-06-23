@@ -9,22 +9,12 @@ import UIKit
 
 class CurrentHuntDetailViewModel: NSObject {
     
-    private var model: HuntModel {
-        didSet {
-            updateCompletion?()
-        }
-    }
-
+    private let model: HuntModel
+    
     init(model: HuntModel) {
         self.model = model
     }
-    
-    private var timer: Timer?
-    
-    func updateModel(_ model: HuntModel) {
-        self.model = model
-    }
-    
+            
     var updateCompletion: (() ->Void)?
     
     var passedDistance: Double = 0.0 {
@@ -41,6 +31,4 @@ class CurrentHuntDetailViewModel: NSObject {
         guard let distance = model.estimatedDistance else { return nil }
         return String(Int(distance)) + " meters"
     }
-    
-    
 }
