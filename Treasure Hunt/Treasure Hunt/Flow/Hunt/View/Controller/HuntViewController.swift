@@ -22,6 +22,7 @@ class HuntViewController: UIViewController {
         }
     }
     private let viewModel: HuntViewModel
+    private var estimatedDistance: CLLocationDistance = 0
     
     // MARK: - Initializers
     
@@ -118,7 +119,7 @@ class HuntViewController: UIViewController {
         let annotation = MKPointAnnotation()
         annotation.coordinate = LocationManager.shared.generateRandomCoordinates(min: 50, max: 300)
         self.annotation = annotation
-//        self.getDirections(to: annotation)
+        self.getDirections(to: annotation)
     }
     
     private func removeAnnotation(_ annotation: MKPointAnnotation?) {
@@ -129,7 +130,9 @@ class HuntViewController: UIViewController {
     
     private func getDirections(to annotation: MKPointAnnotation?) {
         if let annotation = annotation {
-            mapView.getDirections(to: annotation)
+            mapView.getDirections(to: annotation, completion: { [weak self] distance in
+                self?.estimatedDistance = distance ?? 0
+            })
         }
     }
 
