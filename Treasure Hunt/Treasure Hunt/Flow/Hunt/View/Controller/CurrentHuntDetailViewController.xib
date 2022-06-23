@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrentHuntDetailViewController" customModule="Treasure_Hunt" customModuleProvider="target">
             <connections>
-                <outlet property="continueButton" destination="pps-ET-ZUa" id="hxQ-uP-8gp"/>
                 <outlet property="goalLabel" destination="gE0-vV-hyG" id="itF-Gi-2ip"/>
                 <outlet property="timerLabel" destination="0kd-1P-JkB" id="5oz-Pd-agT"/>
                 <outlet property="titleLabel" destination="R2V-MK-whp" id="j9i-Fb-rXM"/>
@@ -65,21 +63,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pps-ET-ZUa">
-                    <rect key="frame" x="167" y="200" width="80" height="80"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="80" id="O4s-ot-18s"/>
-                        <constraint firstAttribute="height" constant="80" id="V2l-2m-Unr"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <color key="tintColor" systemColor="labelColor"/>
-                    <state key="normal">
-                        <imageReference key="image" image="pause.fill" catalog="system" symbolScale="large"/>
-                    </state>
-                    <connections>
-                        <action selector="continueButtonTapped:" destination="-1" eventType="touchUpInside" id="Bx9-EO-qFP"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -91,8 +74,6 @@
                 <constraint firstItem="H12-u2-FkG" firstAttribute="top" secondItem="gs5-VV-sUf" secondAttribute="bottom" constant="10" id="Xqa-bp-edY"/>
                 <constraint firstItem="gE0-vV-hyG" firstAttribute="top" secondItem="e33-3r-4AM" secondAttribute="bottom" constant="10" id="YHD-4N-uGf"/>
                 <constraint firstItem="e33-3r-4AM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="eaS-8B-3dw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pps-ET-ZUa" secondAttribute="bottom" constant="20" id="gQh-Pr-fpk"/>
-                <constraint firstItem="pps-ET-ZUa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jyD-Qe-SRr"/>
                 <constraint firstItem="R2V-MK-whp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="lXz-om-LlD"/>
                 <constraint firstItem="gE0-vV-hyG" firstAttribute="centerX" secondItem="e33-3r-4AM" secondAttribute="centerX" id="mby-bG-pEZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gs5-VV-sUf" secondAttribute="trailing" constant="50" id="rTZ-HV-ZC5"/>
@@ -106,7 +87,6 @@
     <resources>
         <image name="figure.walk.circle.fill" catalog="system" width="128" height="121"/>
         <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="pause.fill" catalog="system" width="116" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

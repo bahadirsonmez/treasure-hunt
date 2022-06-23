@@ -16,19 +16,18 @@ extension CurrentHuntDetailDelegate {
     func huntCompleted() {}
     func huntFailed() {}
 }
-
 class CurrentHuntDetailViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var walkLabel: UILabel!
-    @IBOutlet weak var continueButton: UIButton!
-    private var isPaused: Bool = false
+    
     private var timer: Timer?
     private var passedTime: Int = 0
     
     private let viewModel: CurrentHuntDetailViewModel
+    
     
     // MARK: - Initializers
     
@@ -59,7 +58,6 @@ class CurrentHuntDetailViewController: UIViewController {
     }
     
     private func setup() {
-        configureButton()
         bindViewModel()
         configureData()
     }
@@ -73,18 +71,6 @@ class CurrentHuntDetailViewController: UIViewController {
     private func configureData() {
         goalLabel.text = viewModel.estimatedDistance
         walkLabel.text = viewModel.passedDistanceStringValue
-    }
-    
-    private func configureButton() {
-        continueButton.contentHorizontalAlignment = .fill
-        continueButton.contentVerticalAlignment = .fill
-        continueButton.imageView?.contentMode = .scaleAspectFit
-    }
-    
-    @IBAction func continueButtonTapped(_ sender: UIButton) {
-        isPaused.toggle()
-        let image = UIImage(systemName: isPaused ? "play.fill" : "pause.fill")
-        continueButton.setImage(image, for: .normal)
     }
 }
 

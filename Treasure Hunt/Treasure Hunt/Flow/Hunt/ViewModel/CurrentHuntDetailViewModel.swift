@@ -14,14 +14,14 @@ class CurrentHuntDetailViewModel: NSObject {
     init(model: HuntModel) {
         self.model = model
     }
-            
-    var updateCompletion: (() ->Void)?
     
     var passedDistance: Double = 0.0 {
         didSet {
             updateCompletion?()
         }
     }
+    
+    var updateCompletion: (() ->Void)?
 
     var passedDistanceStringValue: String {
         String(Int(passedDistance)) + " meters"
