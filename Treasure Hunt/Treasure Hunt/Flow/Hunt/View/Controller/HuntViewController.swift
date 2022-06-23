@@ -96,7 +96,9 @@ class HuntViewController: UIViewController {
     }
     
     @IBAction private func startButtonTapped(_ sender: UIButton) {
-        let contentVC = CurrentHuntDetailViewController()
+        let huntModel = HuntModel(estimatedDistance: estimatedDistance)
+        let viewModel = CurrentHuntDetailViewModel(model: huntModel)
+        let contentVC = CurrentHuntDetailViewController(viewModel: viewModel)
         fpc = FloatingPanelController()
         fpc.delegate = self
         fpc.set(contentViewController: contentVC)

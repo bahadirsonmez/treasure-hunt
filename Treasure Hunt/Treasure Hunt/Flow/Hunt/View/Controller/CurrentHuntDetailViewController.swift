@@ -28,6 +28,19 @@ class CurrentHuntDetailViewController: UIViewController {
     private var timer: Timer?
     private var passedTime: Int = 0
     
+    private let viewModel: CurrentHuntDetailViewModel
+    
+    // MARK: - Initializers
+    
+    init(viewModel: CurrentHuntDetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -46,7 +59,20 @@ class CurrentHuntDetailViewController: UIViewController {
     }
     
     private func setup() {
-       configureButton()
+        configureButton()
+        bindViewModel()
+        configureData()
+    }
+    
+    private func bindViewModel() {
+        viewModel.updateCompletion = { [weak self] in
+            self?.walkLabel.text = self?.viewModel.passedDistanceStringValue
+        }
+    }
+    
+    private func configureData() {
+        goalLabel.text = viewModel.estimatedDistance
+        walkLabel.text = viewModel.passedDistanceStringValue
     }
     
     private func configureButton() {
