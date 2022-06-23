@@ -13,8 +13,14 @@ class HuntViewController: UIViewController {
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var startButton: UIButton!
     private var fpc: FloatingPanelController!
+    private var radius: CLLocationDistance = 500
     
-    private var annotation: MKPointAnnotation?
+    private var annotation: MKPointAnnotation? {
+        didSet {
+            guard let annotation = annotation else { return }
+            mapView.addAnnotation(annotation)
+        }
+    }
     private let viewModel: HuntViewModel
     
     // MARK: - Initializers
@@ -78,7 +84,7 @@ class HuntViewController: UIViewController {
     
     private func centerToTheLocation(_ location: CLLocation?) {
         guard let location = location else { return }
-        mapView.centerToLocation(location)
+        mapView.centerToLocation(location, regionRadius: radius)
     }
     
     private func configureButton() {
@@ -102,77 +108,29 @@ class HuntViewController: UIViewController {
         fpc.hide()
         fpc.show(animated: true, completion: nil)
     }
-}
-
-// MARK: - Random location
-
-extension HuntViewController {
+    
+    // MARK: - Helpers
+    
     private func generateRandomPointAnnotation() {
+        removeAnnotation(annotation)
         let annotation = MKPointAnnotation()
-        annotation.coordinate = generateRandomCoordinates(min: 50, max: 300)
-        annotation.title = "Annotation Title"
-        annotation.subtitle = "SubTitle"
-        mapView.addAnnotation(annotation)
+        annotation.coordinate = LocationManager.shared.generateRandomCoordinates(min: 50, max: 300)
         self.annotation = annotation
-//        self.getDirections()
+//        self.getDirections(to: annotation)
     }
     
-    private func generateRandomCoordinates(min: UInt32, max: UInt32)-> CLLocationCoordinate2D {
-        let currentLong = viewModel.currentLocation?.coordinate.longitude ?? 0
-        let currentLat = viewModel.currentLocation?.coordinate.latitude ?? 0
-        
-        //1 KiloMeter = 0.00900900900901° So, 1 Meter = 0.00900900900901 / 1000
-        let meterCord = 0.00900900900901 / 1000
-        
-        //Generate random Meters between the maximum and minimum Meters
-        let randomMeters = UInt(arc4random_uniform(max) + min)
-        
-        //then Generating Random numbers for different Methods
-        let randomPM = arc4random_uniform(6)
-        
-        //Then we convert the distance in meters to coordinates by Multiplying the number of meters with 1 Meter Coordinate
-        let metersCordN = meterCord * Double(randomMeters)
-        
-        //here we generate the last Coordinates
-        if randomPM == 0 {
-            return CLLocationCoordinate2D(latitude: currentLat + metersCordN, longitude: currentLong + metersCordN)
-        }else if randomPM == 1 {
-            return CLLocationCoordinate2D(latitude: currentLat - metersCordN, longitude: currentLong - metersCordN)
-        }else if randomPM == 2 {
-            return CLLocationCoordinate2D(latitude: currentLat + metersCordN, longitude: currentLong - metersCordN)
-        }else if randomPM == 3 {
-            return CLLocationCoordinate2D(latitude: currentLat - metersCordN, longitude: currentLong + metersCordN)
-        }else if randomPM == 4 {
-            return CLLocationCoordinate2D(latitude: currentLat, longitude: currentLong - metersCordN)
-        }else {
-            return CLLocationCoordinate2D(latitude: currentLat - metersCordN, longitude: currentLong)
+    private func removeAnnotation(_ annotation: MKPointAnnotation?) {
+        if let annotation = annotation {
+            mapView.removeAnnotation(annotation)
         }
     }
-}
-
-// MARK: - Helpers
-
-extension HuntViewController {
-    func getDirections(){
-        let request = MKDirections.Request()
-        request.transportType = .walking
-        request.source = MKMapItem.forCurrentLocation()
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: annotation!.coordinate))
-        request.requestsAlternateRoutes = false
-        
-        let directions = MKDirections(request: request)
-        directions.calculate { (response, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                let overlays = self.mapView.overlays
-                self.mapView.removeOverlays(overlays)
-                for route in response!.routes {
-                    self.mapView.addOverlay(route.polyline, level: MKOverlayLevel.aboveRoads)
-                }
-            }
+    
+    private func getDirections(to annotation: MKPointAnnotation?) {
+        if let annotation = annotation {
+            mapView.getDirections(to: annotation)
         }
     }
+
 }
 
 // MARK: - MKMapViewDelegate
@@ -189,14 +147,14 @@ extension HuntViewController: MKMapViewDelegate {
         return renderer
     }
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "annoId")
-        if annotation.title == "Annotation Title" {
-            annotationView.image = UIImage(systemName: "xmark")
-            return annotationView
-        }
-        return nil
-    }
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "annoId")
+//        if annotation.title == "Annotation Title" {
+//            annotationView.image = UIImage(systemName: "xmark")
+//            return annotationView
+//        }
+//        return nil
+//    }
 }
 
 extension HuntViewController: FloatingPanelControllerDelegate {
