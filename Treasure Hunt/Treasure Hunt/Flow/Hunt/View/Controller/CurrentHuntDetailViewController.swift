@@ -8,14 +8,11 @@
 import UIKit
 
 protocol CurrentHuntDetailDelegate: AnyObject {
+    func firstClueCompleted()
     func huntCompleted()
     func huntFailed()
 }
 
-extension CurrentHuntDetailDelegate {
-    func huntCompleted() {}
-    func huntFailed() {}
-}
 class CurrentHuntDetailViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -28,6 +25,7 @@ class CurrentHuntDetailViewController: UIViewController {
     
     private let viewModel: CurrentHuntDetailViewModel
     
+    weak var delegate: CurrentHuntDetailDelegate?
     
     // MARK: - Initializers
     
