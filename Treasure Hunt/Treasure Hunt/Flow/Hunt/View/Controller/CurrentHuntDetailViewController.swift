@@ -13,7 +13,7 @@ protocol CurrentHuntDetailDelegate: AnyObject {
     func huntFailed()
 }
 
-class CurrentHuntDetailViewController: UIViewController {
+class CurrentHuntDetailViewController: BaseViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!

@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class HuntViewController: UIViewController {
+class HuntViewController: BaseViewController {
     
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var startButton: UIButton!
@@ -50,7 +50,6 @@ class HuntViewController: UIViewController {
         
     private func setup() {
         configureButton()
-        configureLocationNotifications()
         configureMapView()
         bindViewModel()
     }
@@ -67,22 +66,7 @@ class HuntViewController: UIViewController {
         mapView.showsBuildings = false
         mapView.delegate = self
     }
-    
-    private func configureLocationNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(locationDidAuthorized(_:)), name: .locationAuthorizationDidAllowed, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(locationDidDenied(_:)), name: .locationAuthorizationDidDenied, object: nil)
-    }
-    
-    @objc
-    private func locationDidAuthorized(_ notification: NSNotification) {
-        viewModel.currentLocation = LocationManager.shared.location()
-    }
-    
-    @objc
-    private func locationDidDenied(_ notification: NSNotification) {
-        print(notification.name)
-    }
-    
+        
     private func centerToTheLocation(_ location: CLLocation?) {
         guard let location = location else { return }
         mapView.centerToLocation(location, regionRadius: radius)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LocationPermissionViewController: UIViewController {
+class LocationPermissionViewController: BaseViewController {
     @IBOutlet private weak var permissionLabel: UILabel!
     @IBOutlet private weak var permissionButton: UIButton!
     
@@ -18,17 +18,11 @@ class LocationPermissionViewController: UIViewController {
     
     private func configureLocationNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(locationDidAuthorized(_:)), name: .locationAuthorizationDidAllowed, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(locationDidDenied(_:)), name: .locationAuthorizationDidDenied, object: nil)
     }
     
     @objc
     private func locationDidAuthorized(_ notification: NSNotification) {
         pushTabBarController()
-    }
-    
-    @objc
-    private func locationDidDenied(_ notification: NSNotification) {
-        print(notification.name)
     }
     
     @IBAction func permissionButtonTapped(_ sender: UIButton) {
