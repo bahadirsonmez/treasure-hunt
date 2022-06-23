@@ -18,7 +18,7 @@ extension CurrentHuntDetailDelegate {
 }
 
 class CurrentHuntDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
@@ -83,7 +83,6 @@ class CurrentHuntDetailViewController: UIViewController {
     
     @IBAction func continueButtonTapped(_ sender: UIButton) {
         isPaused.toggle()
-        isPaused ? pauseTimer() : continueTimer()
         let image = UIImage(systemName: isPaused ? "play.fill" : "pause.fill")
         continueButton.setImage(image, for: .normal)
     }
@@ -107,15 +106,8 @@ extension CurrentHuntDetailViewController {
     }
     
     func startTimer() {
+        LocationManager.shared.clearLocationsArray()
         timer?.invalidate()
-        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
-    }
-    
-    func pauseTimer() {
-        timer?.invalidate()
-    }
-    
-    func continueTimer() {
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
     }
     
@@ -127,8 +119,11 @@ extension CurrentHuntDetailViewController {
     @objc func runTimedCode() {
         passedTime += 1
         timerLabel.text = FormatHelper.formatMinuteSeconds(passedTime)
+        if let distance = LocationManager.shared.calculateDistanceBetweenLastTwoLocations() {
+            viewModel.passedDistance += distance
+        }
     }
-
+    
 }
 
 // MARK: - FloatingPanelLayout
