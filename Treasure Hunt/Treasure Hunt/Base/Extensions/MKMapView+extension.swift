@@ -16,12 +16,13 @@ extension MKMapView {
         setRegion(coordinateRegion, animated: true)
     }
     
-    func getDirections(to annotation: MKPointAnnotation){
+    func getDirections(to annotation: MKPointAnnotation, completion: @escaping (_ estimatedDistance: CLLocationDistance?) -> Void){
         let request = MKDirections.Request()
         request.transportType = .walking
         request.source = MKMapItem.forCurrentLocation()
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: annotation.coordinate))
         request.requestsAlternateRoutes = false
+        var estimatedDistance: CLLocationDistance = 0.0
         
         let directions = MKDirections(request: request)
         directions.calculate { (response, error) in
@@ -31,8 +32,10 @@ extension MKMapView {
                 let overlays = self.overlays
                 self.removeOverlays(overlays)
                 for route in response!.routes {
+                    estimatedDistance += route.distance
                     self.addOverlay(route.polyline, level: MKOverlayLevel.aboveRoads)
                 }
+                completion(estimatedDistance)
             }
         }
     }
