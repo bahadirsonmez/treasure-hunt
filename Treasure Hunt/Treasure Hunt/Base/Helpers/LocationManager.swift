@@ -29,6 +29,7 @@ final class LocationManager: NSObject {
     fileprivate let locationManager = CLLocationManager()
     var locationUpdateHandler: LocationUpdateHandler?
     weak var delegate: LocationManagerDelegate?
+    private var lastLocations = [CLLocation]()
     
     var currentAuthorizationState: CLAuthorizationStatus {
         get {
@@ -72,6 +73,7 @@ final class LocationManager: NSObject {
     
     func location() -> CLLocation? {
         if let location = self.locationManager.location, CLLocationCoordinate2DIsValid(location.coordinate) {
+            self.lastLocations.append(location)
             return location
         }
         return nil
@@ -92,6 +94,16 @@ final class LocationManager: NSObject {
                 self.locationUpdateHandler?()
             })
         }
+    }
+    
+    func clearLocationsArray() {
+        lastLocations.removeAll()
+    }
+    
+    func calculateDistanceBetweenLastTwoLocations() -> CLLocationDistance? {
+        guard lastLocations.count > 1 else { return nil }
+        let lastIndex = lastLocations.count - 1
+        return lastLocations[lastIndex].distance(from: lastLocations[lastIndex-1])
     }
     
     func generateRandomCoordinates(min: UInt32, max: UInt32) -> CLLocationCoordinate2D {
