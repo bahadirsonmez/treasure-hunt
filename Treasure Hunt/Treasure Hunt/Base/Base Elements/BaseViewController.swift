@@ -16,7 +16,7 @@ class BaseViewController: UIViewController {
     
     @objc
     private func locationDidDenied(_ notification: NSNotification) {
-        print(notification.name)
+        AlertHelper.showPermanentAlert("Location Alert", message: "We need to use your location to track your path.")
     }
     
 }
