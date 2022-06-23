@@ -84,7 +84,6 @@
 		E57B698228561AE40028635B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E57B698428561AE60028635B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E57B698728561AE60028635B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E57B698928561AE60028635B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E57B698E28561AE60028635B /* Treasure HuntTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Treasure HuntTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57B699228561AE60028635B /* Treasure_HuntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treasure_HuntTests.swift; sourceTree = "<group>"; };
 		E57B699828561AE60028635B /* Treasure HuntUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Treasure HuntUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,7 +305,6 @@
 				E57B698128561AE40028635B /* Main.storyboard */,
 				E57B698428561AE60028635B /* Assets.xcassets */,
 				E57B698628561AE60028635B /* LaunchScreen.storyboard */,
-				E57B698928561AE60028635B /* Info.plist */,
 			);
 			path = "Project Files";
 			sourceTree = "<group>";
