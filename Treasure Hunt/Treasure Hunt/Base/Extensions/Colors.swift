@@ -16,5 +16,9 @@ extension UIColor {
     class var redButtonColor: UIColor {
         return .systemRed
     }
-
+    
+    class var labelColor: UIColor {
+        return .label
+    }
+    
 }
