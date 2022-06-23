@@ -39,6 +39,7 @@
 		E58419A92857D38400A20043 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58419A82857D38400A20043 /* Colors.swift */; };
 		E58419AD2857D4EF00A20043 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58419AC2857D4EF00A20043 /* UIColor+extension.swift */; };
 		E5A06FD528649D5100179EA6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A06FD428649D5100179EA6 /* BaseViewController.swift */; };
+		E5A06FD728649E1D00179EA6 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A06FD628649E1D00179EA6 /* AlertHelper.swift */; };
 		E5C26E8F2861F5DE00907538 /* HuntViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C26E8E2861F5DE00907538 /* HuntViewModel.swift */; };
 		E5C26E932861F9A900907538 /* LocationPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C26E912861F9A900907538 /* LocationPermissionViewController.swift */; };
 		E5C26E942861F9A900907538 /* LocationPermissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C26E922861F9A900907538 /* LocationPermissionViewController.xib */; };
@@ -98,6 +99,7 @@
 		E58419A82857D38400A20043 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E58419AC2857D4EF00A20043 /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		E5A06FD428649D5100179EA6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E5A06FD628649E1D00179EA6 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		E5C26E8E2861F5DE00907538 /* HuntViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntViewModel.swift; sourceTree = "<group>"; };
 		E5C26E912861F9A900907538 /* LocationPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionViewController.swift; sourceTree = "<group>"; };
 		E5C26E922861F9A900907538 /* LocationPermissionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationPermissionViewController.xib; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				E55F838C285C880200700BB6 /* FormatHelper.swift */,
 				E55F838F285CCAE200700BB6 /* LocationManager.swift */,
+				E5A06FD628649E1D00179EA6 /* AlertHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5A06FD728649E1D00179EA6 /* AlertHelper.swift in Sources */,
 				E5C26E8F2861F5DE00907538 /* HuntViewModel.swift in Sources */,
 				E57B69BE28562CFA0028635B /* MKMapView+extension.swift in Sources */,
 				E52D994628644B280081AB8E /* HuntModel.swift in Sources */,
